@@ -13,7 +13,7 @@ Link da Aplicação Web: Link do GitHub Pages ou Streamlit Cloud
 Descrição: Explica em 2 a 3 frases o objetivo do teu Dashboard / Web App
 Proposta Escolhida: Proposta 1 ou Proposta 2.
 
-2. Estrutura do Código e Funcionalidades Integradas
+3. Estrutura do Código e Funcionalidades Integradas
 
 Explica se foram adaptados os exercícios das fichas ou se forma utilizados novos
 exercícios com IA.
