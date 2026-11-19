@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="pt-PT">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Analisador de Poesia · Dashboard Multimédia</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="https://pyscript.net/releases/2025.11.1/core.css">
+
+    <script type="module" src="https://pyscript.net/releases/2025.11.1/core.js"></script>
+</head>
+
+<body>
+
+    <div id="loading" class="loading">
+        <div class="spinner"></div>
+        <p>A preparar o Analisador de Poesia...</p>
+    </div>
+
+    <div class="widget-container">
+
+        <nav class="nav-header">
+            <a href="../index.html" class="back-link">← Voltar para o menu principal</a>
+            <span class="nav-brand">Dashboard Multimédia</span>
+        </nav>
+
+        <main class="tile tile--single tile--poetry">
+            <h1>Analisador de Poesia</h1>
+            <p>Analisa textos e descobre padrões nas palavras.</p>
+
+            <label for="poem-input">O teu texto:</label>
+            <textarea id="poem-input" placeholder="Escreve ou cola aqui um poema..."></textarea>
+
+            <button id="analyze-button">Analisar texto</button>
+
+            <div id="analysis-result" class="result">
+                Os resultados vão aparecer aqui.
+            </div>
+
+            <div id="rewrite-section" style="display: none; margin-top: 16px;">
+                <button id="rewrite-button" class="btn-rewrite">✨ Reescrever poema com sinónimos</button>
+                <div id="rewrite-result"></div>
+            </div>
+        </main>
+
+        <footer class="tile tile--footer">
+            <p>Dashboard Multimédia · Projeto de Oficina de Multimédia</p>
+        </footer>
+
+    </div>
+
+    <script type="py" src="./poetry.py"></script>
+
+</body>
+</html>
