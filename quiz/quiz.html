@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="pt-PT">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Questionário de Multimédia · Dashboard Multimédia</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="https://pyscript.net/releases/2025.11.1/core.css">
+
+    <script type="module" src="https://pyscript.net/releases/2025.11.1/core.js"></script>
+</head>
+
+<body>
+
+    <div id="loading" class="loading">
+        <div class="spinner"></div>
+        <p>A preparar o Questionário de Multimédia...</p>
+    </div>
+
+    <!-- OVERLAY DE EXPLOSÃO DA BOMBA -->
+    <div id="explosion-overlay" class="explosion-overlay hidden">
+        <div class="shockwave"></div>
+        <div class="explosion-card">
+            <div class="explosion-particles">
+                <span class="particle p1">💥</span>
+                <span class="particle p2">🔥</span>
+                <span class="particle p3">💨</span>
+                <span class="particle p4">⚡</span>
+                <span class="particle p5">💥</span>
+                <span class="particle p6">🔥</span>
+            </div>
+            <div id="bomb-blast-icon" class="bomb-blast-icon">💣💥</div>
+            <div class="boom-title">BOOM!</div>
+            <div class="boom-subtitle">O tempo esgotou-se!</div>
+            <div class="boom-dismiss-hint">Clica em qualquer lugar para continuar</div>
+        </div>
+    </div>
+
+    <div class="widget-container">
+
+        <nav class="nav-header">
+            <a href="../index.html" class="back-link">← Voltar para o menu principal</a>
+            <span class="nav-brand">Dashboard Multimédia</span>
+        </nav>
+
+        <main class="tile tile--single tile--quiz">
+            <div class="quiz-top-bar">
+                <div id="quiz-timer-container" class="quiz-timer">
+                    <span id="timer-icon" class="timer-icon">⏱️</span>
+                    <span class="timer-text">Tempo: <strong id="quiz-countdown">10s</strong></span>
+                </div>
+            </div>
+
+            <div class="timer-bar-track">
+                <div id="timer-bar-fill" class="timer-bar-fill"></div>
+            </div>
+
+            <h1>Questionário de Multimédia</h1>
+            <p>Testa os teus conhecimentos de multimédia e programação. Tens 10 segundos por pergunta!</p>
+
+            <div id="quiz-question">
+                Prepara-te para começar!
+            </div>
+
+            <div id="quiz-options"></div>
+
+            <button id="quiz-button">Começar questionário</button>
+
+            <div id="quiz-result" class="result">
+                A tua pontuação aparecerá aqui.
+            </div>
+        </main>
+
+        <footer class="tile tile--footer">
+            <p>Dashboard Multimédia · Projeto de Oficina de Multimédia</p>
+        </footer>
+
+    </div>
+
+    <script type="py" src="./quiz.py"></script>
+
+</body>
+</html>

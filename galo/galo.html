@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="pt-PT">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Jogo do Galo · Dashboard Multimédia</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="https://pyscript.net/releases/2025.11.1/core.css">
+
+    <script type="module" src="https://pyscript.net/releases/2025.11.1/core.js"></script>
+</head>
+
+<body>
+
+    <div id="loading" class="loading">
+        <div class="spinner"></div>
+        <p>A preparar o Jogo do Galo...</p>
+    </div>
+
+    <!-- ANIMAÇÃO & MODAL DE RESULTADO -->
+    <div id="galo-result-overlay" class="galo-result-overlay hidden">
+        <div class="result-backdrop" id="result-backdrop"></div>
+        <div id="result-modal-box" class="result-modal">
+            <div id="result-icon" class="result-icon">🏆</div>
+            <div id="result-title" class="result-title">Vitória!</div>
+            <div id="result-message" class="result-message">Parabéns pela jogada!</div>
+            <button id="btn-play-again" class="btn-play-again">Jogar Novamente ↺</button>
+        </div>
+    </div>
+
+    <div class="widget-container">
+
+        <nav class="nav-header">
+            <a href="../index.html" class="back-link">← Voltar para o menu principal</a>
+            <span class="nav-brand">Dashboard Multimédia</span>
+        </nav>
+
+        <main class="tile tile--single tile--galo">
+            <h1>Jogo do Galo</h1>
+            <p>Faz 3 em linha com bolas e cruzes! Escolhe a dificuldade contra o computador ou joga offline com um amigo.</p>
+
+            <div class="galo-wrapper">
+
+                <!-- SELETOR DE MODO -->
+                <div class="galo-mode-selector">
+                    <button id="mode-cpu" class="mode-btn active">🤖 Contra Computador</button>
+                    <button id="mode-pvp" class="mode-btn">👥 2 Jogadores (Amigo)</button>
+                </div>
+
+                <!-- SELETOR DE DIFICULDADE (SÓ CONTRA COMPUTADOR) -->
+                <div id="difficulty-container" class="difficulty-selector">
+                    <span class="difficulty-label">Dificuldade:</span>
+                    <div class="difficulty-buttons">
+                        <button id="diff-facil" class="diff-btn">Fácil</button>
+                        <button id="diff-medio" class="diff-btn active">Médio</button>
+                        <button id="diff-dificil" class="diff-btn">Difícil</button>
+                    </div>
+                </div>
+
+                <!-- PLACAR -->
+                <div class="galo-scoreboard">
+                    <div class="score-card">
+                        <span id="label-score-x" class="score-title">Jogador X</span>
+                        <div id="score-x" class="score-val">0</div>
+                    </div>
+                    <div class="score-card">
+                        <span class="score-title">Empates</span>
+                        <div id="score-empates" class="score-val">0</div>
+                    </div>
+                    <div class="score-card">
+                        <span id="label-score-o" class="score-title">Computador (O)</span>
+                        <div id="score-o" class="score-val">0</div>
+                    </div>
+                </div>
+
+                <!-- MENSAGEM DE ESTADO -->
+                <div id="galo-status" class="galo-status">
+                    A tua vez (Jogador X)!
+                </div>
+
+                <!-- QUADRÍCULA 3x3 -->
+                <div id="galo-board" class="galo-board">
+                    <button class="galo-cell" id="cell-0" data-index="0"></button>
+                    <button class="galo-cell" id="cell-1" data-index="1"></button>
+                    <button class="galo-cell" id="cell-2" data-index="2"></button>
+                    <button class="galo-cell" id="cell-3" data-index="3"></button>
+                    <button class="galo-cell" id="cell-4" data-index="4"></button>
+                    <button class="galo-cell" id="cell-5" data-index="5"></button>
+                    <button class="galo-cell" id="cell-6" data-index="6"></button>
+                    <button class="galo-cell" id="cell-7" data-index="7"></button>
+                    <button class="galo-cell" id="cell-8" data-index="8"></button>
+                </div>
+
+                <!-- BOTÃO REINICIAR -->
+                <button id="btn-reset-game" class="btn-reset">
+                    ↺ Reiniciar partida
+                </button>
+
+            </div>
+        </main>
+
+        <footer class="tile tile--footer">
+            <p>Dashboard Multimédia · Projeto de Oficina de Multimédia</p>
+        </footer>
+
+    </div>
+
+    <script type="py" src="./galo.py"></script>
+
+</body>
+</html>
